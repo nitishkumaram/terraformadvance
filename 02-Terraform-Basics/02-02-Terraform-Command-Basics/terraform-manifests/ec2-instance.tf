@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      #version = "~> 3.21" # Optional but recommended in production
+      #version = "~> 5.0" # Optional but recommended in production
     }
   }
 }
@@ -11,11 +11,11 @@ terraform {
 # Provider Block
 provider "aws" {
   profile = "default" # AWS Credentials Profile configured on your local desktop terminal  $HOME/.aws/credentials
-  region  = "ap-south-1"
+  region  = "us-east-1"
 }
 
 # Resource Block
 resource "aws_instance" "ec2demo" {
-  ami           = "ami-0376ec8eacdf70aae" # Amazon Linux in us-east-1, update as per your region
+  ami           = "ami-00beae93a2d981137" # Amazon Linux in us-east-1, update as per your region
   instance_type = "t2.micro"
 }
